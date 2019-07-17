@@ -1,0 +1,45 @@
+group 'io.github.ponnamkarthik.nativeweb'
+version '1.0-SNAPSHOT'
+
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.2.1'
+    }
+}
+
+rootProject.allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 27
+
+    defaultConfig {
+        minSdkVersion 16
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    lintOptions {
+        disable 'InvalidPackage'
+    }
+}
+
+
+dependencies {
+    // Some other dependencies should be here as well.
+    implementation 'com.google.vr:sdk-audio:1.160.0'
+    implementation 'com.google.vr:sdk-base:1.160.0'
+    implementation 'com.google.vr:sdk-common:1.160.0'
+    implementation 'com.google.vr:sdk-commonwidget:1.160.0'
+    implementation 'com.google.vr:sdk-panowidget:1.160.0'
+    implementation 'com.google.vr:sdk-videowidget:1.160.0'
+}
